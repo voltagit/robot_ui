@@ -1,0 +1,2 @@
+robot_camera
+-DCATKIN_DEVEL_PREFIX=/home/billapi/5-camera-webpage/devel -DCMAKE_INSTALL_PREFIX=/home/billapi/5-camera-webpage/install -G Unix Makefiles
