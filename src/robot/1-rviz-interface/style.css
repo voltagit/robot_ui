@@ -1,0 +1,14 @@
+.row{
+  
+   height: 100%;
+   padding: 0%;
+}
+
+.col-4{
+    background-color: burlywood;
+}
+
+.col-8{
+    background-color: darkslategrey;
+}
+
