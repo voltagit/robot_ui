@@ -98,8 +98,4 @@ var app = new Vue({
             this.topic.publish(this.message)
             console.log("Tv")
         },
-
-      mounted() {
-        },
-
-})
+}})
