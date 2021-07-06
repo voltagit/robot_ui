@@ -10,7 +10,7 @@
 
 ขั้นตอนการทำให้ terminal roslaunch websocket.launch อัตโนมัติ
   
-  1.dowload folder robot_ui
+  1.dowload folder 1-default
   
   2.พิม gedit .bashrc ในช่อง terminal
   
