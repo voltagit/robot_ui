@@ -1,0 +1,15 @@
+.hidden{
+ 
+  visibility: hidden;
+}
+.top-left{
+  position:absolute;
+  top:8px;
+  left: 16px;
+}
+
+.pic{
+  position: relative;
+  height: 100%;
+  width:90%;
+}

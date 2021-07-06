@@ -5,6 +5,8 @@ var app = new Vue({
     
     computed: {
         ws_address: function() {
+            rosbridge_address = "ws://0.0.0.0:9090";
+
             return (this.rosbridge_address)
         },
     },
@@ -22,6 +24,7 @@ var app = new Vue({
     // helper methods to connect to ROS
     methods: {
         connect: function() {
+
             this.loading = true
             this.ros = new ROSLIB.Ros({
                 url: this.ws_address
