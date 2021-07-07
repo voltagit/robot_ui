@@ -1,7 +1,7 @@
 # ui
 
 1. Install Rosbridge
-   - sudo apt-get install ros-<rosdistro>-rosbridge-server
+   - sudo apt-get install ros-noetic-rosbridge-server
 
 ขั้นตอนการทำให้ terminal เปิดอัตโนมัติเมื่อเปิด ubuntu  
   1. เสิช Startup Appilcation
