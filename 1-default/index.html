@@ -5,47 +5,25 @@
 
 <script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
 <link rel="stylesheet" href="style.css"/>
-<script type="text/javascript" type="text/javascript">
+<script type="text/javascript" src="https://static.robotwebtools.org/EaselJS/current/easeljs.min.js">
+    </script>
+    <script type="text/javascript" src="https://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js">
+    </script>
+    <script type="text/javascript" src="https://static.robotwebtools.org/roslibjs/current/roslib.min.js">
+    </script>
+    <script type="text/javascript" src="https://static.robotwebtools.org/ros2djs/current/ros2d.min.js">
+    </script>
+   
+    <script src="https://cdn.jsdelivr.net/npm/vue">
+    </script>
 
 
+<head>
+<body>
+<img id="robot-2"" src="picure-first.jpg" alt="robot picture" class ="pic2" />
 
-  var ros = new ROSLIB.Ros({
-    url : 'ws://localhost:9090'
-  });
-
- ros.on('connection', function() {
-    document.getElementById("status").innerHTML = "Connected";
-  });
-
-  ros.on('error', function(error) {
-    document.getElementById("status").innerHTML = "Error";
-  });
-
-  ros.on('close', function() {
-    document.getElementById("status").innerHTML = "Closed";
-  });
-  
- </script> 
- 
- 
- <script defer src=main.js> </script>
-
-
-</head>
-
-<body >
-
- 
-  <div class="container">
-  <div class="top-left"> 
-  <h1>Simple ROS User Interface</h1>
-    <p>Connection status: <span id="status"></span></p>
-    <p>Last /txt_msg received: <span id="msg"></span></p>
-  
-  </div>
-   <img id="robot_pic" src="picture.jpg" alt="robot picture" class ="pic" />
-  </div>
- 
-
+<script defer src=main.js></script>
 </body>
+ 
+
 </html>
