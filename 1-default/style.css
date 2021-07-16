@@ -18,3 +18,23 @@
   height: 100%;
   width:90%;
 }
+.ongoing{
+  position: relative;
+  height: 100%;
+  width:90%;
+  background-size: contain;
+  object-fit: cover;
+}
+.img{
+  position: relative;
+  height: 100%;
+  width:90%;
+}
+
+.divWithBgImage {
+  width: 100%;
+  height: 600px;
+  background-image:url(loading.jpg);
+ 
+ 
+}
