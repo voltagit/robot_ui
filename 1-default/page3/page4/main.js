@@ -15,7 +15,7 @@ var ros = new ROSLIB.Ros({
   });
    
    
-   
+ 
   
 var data = {
     goal: null,
@@ -28,9 +28,10 @@ var data = {
 }
 console.log(data.action.result.result)
 var actionClient = new ROSLIB.ActionClient({
-    ros : this.ros,
-                serverName : '/control',
-                actionName : 'course_web_dev_ros/WaypointActionAction',
+    ros : this.ros, 
+    
+    serverName : '/number_action',
+    actionName : 'my_robot_msgs/numberAction',
 })
 
 
@@ -39,7 +40,7 @@ var actionClient = new ROSLIB.ActionClient({
     
     
     var goal = new ROSLIB.Goal({
-        actionClient: actionClient,
+        actionClient: client_goal,
         goalMessage: data.action.goal.total
     })
     

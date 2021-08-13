@@ -29,20 +29,21 @@ const btn = document.querySelector(".btn--start")
 const load = document.getElementById('loading').classList.add('hidden')
 const loading = document.getElementById('loading');
 
-var data = {
-  goal: null,
-  action: {
-          goal: { total: 1 },
-          feedback: { progress: 0 },
-          result: { success: false },
-          status: { status: 0, text: '' },
-      }
-}
-console.log(data.action.result.result)
+// var data = {
+//   goal: null,
+//   action: {
+//           goal: { total: 1 },
+//           feedback: { progress: 0 },
+//           result: { success: false },
+//           status: { status: 0, text: '' },
+//       }
+// }
+
+//console.log(data.action.result.result)
 var actionClient = new ROSLIB.ActionClient({
   ros : this.ros,
-              serverName : '/control',
-              actionName : 'course_web_dev_ros/WaypointActionAction',
+              serverName : '/action_server',
+              actionName : 'my_robot_msgs/numberAction',
 })
 
 
@@ -59,23 +60,23 @@ btn.addEventListener('click',function(){
   
   var goal = new ROSLIB.Goal({
       actionClient: actionClient,
-      goalMessage: data.action.goal.total
+    goalMessage : {order: 1}
   })
   
   goal.on('status', (status) => {
-    action.status = status
-    console.log(status)
+    console.log('Feedback: ' + feedback.sequence)
+    
   })
   
 
   
   goal.on('feedback', (feedback) => {
-    action.feedback = feedback
+    console.log('Feedback: ' + feedback.sequence)
     console.log(feedback)             
               })
               
   goal.on('result', (result) => {
-    data.action.result.result = result
+    console.log('Final Result: ' + result.sequence)
     if (result === -1) {
       window.location = "../1-default/page3/page3.html"
       
@@ -89,7 +90,49 @@ btn.addEventListener('click',function(){
               })
   
   goal.send()
-  
+            
 
 })
+
+
+
+// btn.addEventListener('test',function(){
+//   console.log('test2');
+//   loading.classList.remove('hidden')
+
+
+  
+// function ActionClient(options) {
+//   var that = this;
+//   options = options || {};
+//   this.ros = options.ros;
+//   this.serverName = options.fibonacci,
+//   this.actionName = options.actionlib_tutorials/FibonacciAction;
+//   this.goals = {};
+
+//   this.feedbackListener = new Topic({
+//     ros: this.ros,
+//     name: this.serverName + '/feedback',
+//     messageType : this.actionName + 'Feedback',
+//   });
+
+
+//   this.goalTopic = new Topic({
+
+//     ros : this.ros,
+
+//     name : this.serverName + '/goal',
+
+//     messageType : this.actionName + 'Goal',
+//     goalMessage : {order : 1
+//     }
+
+//   });
+
+// }
     
+
+  
+// })
+
+
